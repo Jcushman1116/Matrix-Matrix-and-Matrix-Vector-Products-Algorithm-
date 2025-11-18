@@ -23,23 +23,10 @@ Accuracy verification using absolute/relative error norms
 1. Unit Lower Triangular Matrix–Vector Product
 
 Computes 
-𝑧
-=
-𝐿
-𝑣
-z=Lv where 
-𝐿
+𝑧=𝐿𝑣 
 L has 1s on the diagonal.
 
-Complexity: 
-𝑂
-(
-𝑛
-2
-)
-O(n
-2
-)
+Complexity: O(n2)
 
 2. Compressed Unit Lower Triangular Matrix–Vector Product
 
@@ -51,64 +38,29 @@ Saves memory while keeping the same complexity.
 
 Uses only two subdiagonal bands.
 
-Complexity: 
-𝑂
-(
-𝑛
-)
-O(n)
+Complexity: O(n)
 
 4. Matrix–Matrix Product Using Middle Product
 
 Computes 
-𝑀
-=
-𝐿
-𝑈
-M=LU where 
-𝐿
-L is unit lower triangular and 
-𝑈
-U is upper triangular.
+𝑀=𝐿𝑈 where L is unit lower triangular and U is upper triangular.
 
 Avoids multiplying structural zeros.
 
-Complexity: 
-𝑂
-(
-𝑛
-3
-)
-O(n
-3
-)
+Complexity: O(n3)
 
 🧪 Experimental Design
 
-Matrices and vectors generated using normally distributed entries.
-
-Dimensions tested for 
-𝑛
-=
-30
-n=30 to 
-100
-100.
+-Matrices and vectors generated using normally distributed entries.
+-Dimensions tested for n=30 to 100
 
 Error metrics:
-
-Absolute error
-
-Relative error
-
-Mean vs max error across trials
+-Absolute error
+-Relative error
+-Mean vs max error across trials
 
 📈 Results Summary
-
-All algorithms achieve very small relative errors (~1e-15).
-
-Compression and banded methods maintain accuracy.
-
-Structured exploitation significantly improves speed.
-
-Middle-product method validates expected triangular structure.
+-All algorithms achieve very small relative errors (~1e-15).
+-Compression and banded methods maintain accuracy.
+-Structured exploitation significantly improves speed.
+-Middle-product method validates expected triangular structure.
